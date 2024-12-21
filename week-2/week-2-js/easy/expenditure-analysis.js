@@ -14,7 +14,25 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  let arr=[];
+   transactions.forEach((transaction) => {
+    
+   
+    // object destructuring  taking the price and category 
+     const {category:cat,price}=transaction
+     // here we find that category in my arr 
+     let obj=arr.find(({category})=>cat===category);
+     if(obj===undefined){
+        arr.push({
+          category:cat,
+          totalSpent:price
+        })
+     }else{
+      // here we update the object total spent
+       obj.totalSpent+=price;
+     }
+   })
+   return arr;
 }
 
 module.exports = calculateTotalSpentByCategory;

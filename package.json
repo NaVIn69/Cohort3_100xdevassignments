@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testMatch": ["**/tests/**/*.js", "**/?(*.)+(spec|test).js"]
+  }
+
+}
